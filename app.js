@@ -27,12 +27,16 @@ submitButton.addEventListener('click', () => {
     displayGuessAccuracy(guessNumber, magicNumber);
     
     if (guessNumber === magicNumber){
+        submitButton.disabled = true;
         return displayWin();
+        
     }
     if (guessesRemaining === 0 && guessNumber !== magicNumber) {
+        submitButton.disabled = true;
         return displayLose();
     }
     if (guessesRemaining < 0) {
+        submitButton.disabled = true;
         return displayNoMoreGuesses();
     }
     
@@ -51,8 +55,14 @@ submitButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () =>{
-  
-})
+  submitButton.disabled = false;
+  guessesRemaining = 4;
+  magicNumber = Math.ceil(Math.random() * 20);
+  numberGuessed.textContent = '';
+  guessesLeft.textContent = 'Guesses Remaining: 4';
+  winLose.textContent = '';
+  guessAccuracy.textContent = '';
+});
 
 
 
