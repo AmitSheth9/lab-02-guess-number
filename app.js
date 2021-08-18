@@ -76,7 +76,7 @@ resetButton.addEventListener('click', () =>{
 
 
 function displayGuess(userGuess) {
-    numberGuessed.textContent = userGuess;
+    numberGuessed.textContent = `You guessed: ${userGuess}`;
 }
 
 
