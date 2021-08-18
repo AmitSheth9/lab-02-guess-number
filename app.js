@@ -9,10 +9,14 @@ const guess = document.getElementById('guess');
 const submitButton = document.getElementById('submitbutton');
 const winLose = document.getElementById('winlose');
 const resetButton = document.getElementById('resetbutton');
+const timesCorrect = document.getElementById('timescorrect');
+const timesWrong = document.getElementById('timeswrong');
 
 // initialize global state
 let guessesRemaining = 4;
 let magicNumber = Math.ceil(Math.random() * 20);
+let timesguessedright = 0;
+let timesguessedwrong = 0;
 
 // set event listeners 
   // get user input
@@ -27,12 +31,16 @@ submitButton.addEventListener('click', () => {
     displayGuessAccuracy(guessNumber, magicNumber);
     
     if (guessNumber === magicNumber){
+        timesguessedright++;
+        timesCorrect.textContent = `Times guessed correctly: ${timesguessedright}`;
         submitButton.disabled = true;
         return displayWin();
         
     }
     if (guessesRemaining === 0 && guessNumber !== magicNumber) {
         submitButton.disabled = true;
+        timesguessedwrong++;
+        timesWrong.textContent = `Times lost: ${timesguessedwrong}`;
         return displayLose();
     }
     if (guessesRemaining < 0) {
