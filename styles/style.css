@@ -1,6 +1,6 @@
 
 body {
-   
+   background-color: beige;
 }
 
 
@@ -23,8 +23,8 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
     color: blue;
-    background-color: yellow;
-    border: solid blue 2px;
+    
+    border: solid black 2px;
     width: 35%;
 }
 #guessaccuracy {
@@ -60,6 +60,8 @@ body {
 }
 
 #winlose {
-    font-size: 30px;
+    font-size: 40px;
     font-family: bold;
+    color: red;
+    border: solid black 3px;
 }
