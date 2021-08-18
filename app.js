@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // import functions and grab DOM elements
-//import { displayGuessAccuracy } from "./utils.js";
+import { compareNumbers, displayGuessAccuracy } from './utils.js';
 
 const numberGuessed = document.getElementById('numberguessed');
 const guessAccuracy = document.getElementById('guessaccuracy');
@@ -8,16 +8,11 @@ const guessesLeft = document.getElementById('guessesleft');
 const guess = document.getElementById('guess');
 const submitButton = document.getElementById('submitbutton');
 const winLose = document.getElementById('winlose');
-
-
-
-
-
-
+const resetButton = document.getElementById('resetbutton');
 
 // initialize global state
 let guessesRemaining = 4;
-let magicNumber = Math.floor(Math.random() * 20);
+let magicNumber = Math.ceil(Math.random() * 20);
 
 // set event listeners 
   // get user input
@@ -29,7 +24,7 @@ submitButton.addEventListener('click', () => {
     let guessNumber = Number(guess.value);
     displayGuess(guess.value);
     displayGuessesRemaining();
-    displayGuessAccuracy(guessNumber);
+    displayGuessAccuracy(guessNumber, magicNumber);
     
     if (guessNumber === magicNumber){
         return displayWin();
@@ -54,6 +49,13 @@ submitButton.addEventListener('click', () => {
 
 
 });
+
+resetButton.addEventListener('click', () =>{
+  
+})
+
+
+
 
 function displayGuess(userGuess) {
     numberGuessed.textContent = userGuess;
@@ -80,16 +82,8 @@ function displayNoMoreGuesses() {
 
 }
 
-function displayGuessAccuracy(userGuess) {
-    if (userGuess < magicNumber) {
-        guessAccuracy.textContent = 'Guess Again. Your guess of ' + userGuess + ' is too low!';
-    }
-    else if (userGuess > magicNumber) {
-        guessAccuracy.textContent = 'Guess Again. Your guess of ' + userGuess + ' is is too high';
-    }
-    else if (userGuess === magicNumber){
-        return winLose.textContent = 'Winner!! You guessed correctly!';
-    }
+function checkIfWon(guessedNumber, correctNum) {
+    if (guessedNumber === correctNum) return displayWin();
 }
 
 function resetAndPlayAgain() {
