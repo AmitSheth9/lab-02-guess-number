@@ -1,6 +1,6 @@
 
 body {
-   background-color: beige;
+   background-color:beige;
 }
 
 
@@ -22,15 +22,16 @@ body {
     font-size: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
-    color: blue;
-    
+    color: yellow;
+    background-color: black;
     border: solid black 2px;
     width: 35%;
 }
 #guessaccuracy {
     font-style: bold;
     font-size: 30px;
-    color: red;
+    color: yellow;
+    background-color: black;
     border: solid black 2px;
     width: 35%;
     margin-bottom: 10px;
@@ -40,6 +41,7 @@ body {
     font-style: bold;
     font-size: 30px;
     color: red;
+    background-color: black;
     border: solid black 2px;
     width: 35%;
 }
@@ -53,15 +55,29 @@ body {
 }
 #submitbutton {
    font-size: 20px;
+   cursor: pointer;
+}
+
+#submitbutton:hover {
+    color: yellow;
+    background-color: black;
+    border: solid yellow 1px;
     
 }
 #resetbutton {
    font-size: 20px;
+   cursor: pointer;
 }
 
+#resetbutton:hover {
+    color: yellow;
+    background-color: black;
+    border: solid yellow 1px;
+}
 #winlose {
     font-size: 40px;
     font-family: bold;
-    color: red;
+    color: yellow;
     border: solid black 3px;
+    background-color: black;
 }
