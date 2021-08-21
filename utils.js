@@ -1,6 +1,6 @@
 
 
-
+const winLose = document.getElementById('winlose');
 const guessAccuracy = document.getElementById('guessaccuracy');
 
 export function compareNumbers(guess, correctNumber) {
@@ -19,4 +19,13 @@ export function displayGuessAccuracy(userGuess, correctNumber) {
     else if (compareNumbers(userGuess, correctNumber) === 0){
         return guessAccuracy.textContent = 'Winner!! You guessed correctly!';
     }
+}
+
+export function displayLose() {
+
+    winLose.textContent = 'You lose. No more guesses left.';
+}
+export function displayWin() {
+    winLose.textContent = 'You guessed correctly! You win!!';
+    guessAccuracy.textContent = 'Winner!';
 }
